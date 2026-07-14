@@ -1,27 +1,34 @@
 import { BootScene } from "./scenes/BootScene.js";
 
-const config = {
+const config={
 
-    type: Phaser.AUTO,
+type:Phaser.AUTO,
 
-    width: 480,
+width:480,
 
-    height: 800,
+height:800,
 
-    parent: "game",
+parent:"game",
 
-    backgroundColor: "#000000",
+pixelArt:true,
 
-    physics:{
-        default:"arcade",
-        arcade:{
-            debug:false
-        }
-    },
+physics:{
 
-    scene:[
-        BootScene
-    ]
+default:"arcade",
+
+arcade:{
+
+debug:false
+
+}
+
+},
+
+scene:[
+
+BootScene
+
+]
 
 };
 
