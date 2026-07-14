@@ -1,14 +1,16 @@
-export class Stage1 extends Phaser.Scene{
+import { Player } from "../objects/Player.js";
 
-    constructor(){
+export class Stage1 extends Phaser.Scene {
+
+    constructor() {
 
         super("Stage1");
 
     }
 
-    create(){
+    create() {
 
-        this.bg=this.add.tileSprite(
+        this.bg = this.add.tileSprite(
             240,
             400,
             480,
@@ -16,12 +18,22 @@ export class Stage1 extends Phaser.Scene{
             "bg"
         );
 
+        this.player = new Player(this);
+
     }
 
-    update(){
+    update(time) {
 
-        // 배경이 계속 아래로 흘러감
-        this.bg.tilePositionY-=2;
+        this.bg.tilePositionY -= 2;
+
+        this.player.update(time);
+
+        this.player.bullets.children.each((bullet) => {
+
+            if (bullet.y < -20)
+                bullet.destroy();
+
+        });
 
     }
 
