@@ -1,3 +1,5 @@
+import { Enemy } from "../objects/Enemy.js";
+
 import { Player } from "../objects/Player.js";
 
 export class Stage1 extends Phaser.Scene {
